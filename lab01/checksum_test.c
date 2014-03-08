@@ -1,8 +1,7 @@
 /* 
+ * Tests several checksum algorithms.
  *
- * Written by mitchell Pomery <mjpomery@ucc.asn.au>
- *
- * Rewritten by Chris McDonald <chris@csse.uwa.edu.au>
+ * Written by Mitchell Pomery <mjpomery@ucc.asn.au>
  *
  * Compile me with:
  *		gcc -Wall -std=c99 -pedantic -o creditcard creditcard.c
