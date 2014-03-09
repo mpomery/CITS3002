@@ -25,7 +25,7 @@ int64_t timing(bool start)
     return usecs;
 }
 
-int main(void)
+/*int main(void)
 {
 //  START OUR TIMING
     timing(true);
@@ -38,4 +38,4 @@ int main(void)
     printf("%lldusecs\n", timing(false));
 
     exit(0);
-}
+}*/
