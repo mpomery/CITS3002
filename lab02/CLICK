@@ -1,0 +1,23 @@
+
+compile		 = "click.c"
+
+// THE FOLLOWING LINE WILL OPEN EACH NODE'S WINDOW ON START-UP
+winopen		 = true
+
+// THE FOLLOWING LINE SETS THE PROBABILITY OF CORRUPTION TO 1:4  (1:2^2)
+probframecorrupt = 2
+
+host perth {
+    x=50 y=50
+    winx=0, winy=50
+    propagationdelay = 100ms
+    link to sydney
+}
+
+host sydney {
+    x=500 y=50                                                                  
+    winx=550, winy=50
+    east east east east of perth
+    propagationdelay = 500ms
+    link to perth
+}

@@ -1,0 +1,18 @@
+
+#define	HOST1	Perth
+#define	HOST2	Melbourne
+
+compile = "keyboard.c"
+winopen = true
+
+host HOST1 {
+    x=80, y=50
+    propagationdelay = 100ms
+    link to HOST2
+}
+
+host HOST2 {
+    east east east east of HOST1
+    propagationdelay = 500ms
+    link to HOST1
+}
