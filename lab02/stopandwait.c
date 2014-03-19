@@ -95,6 +95,32 @@ static EVENT_HANDLER(physical_ready)
         printf("\t\t\t\tBAD checksum - frame ignored\n");
         return; // Ignore Frame
     }
+
+    switch(f.kind) {
+      case DL_ACK : {
+        if(f.seq == ackexpected) {
+            printf("\t\t\t\tACK received, seq=%d\n", f.seq);
+            CNET_stop_timer(lasttimer);
+            ackexpected = 1-ackexpected;
+            CNET_enable_application(ALLNODES);
+        }
+        break;
+      }
+      case DL_DATA : {
+        printf("\t\t\t\tDATA received, seq=%d, ", f.seq);
+        if(f.seq == frameexpected) {
+            printf("up to application\n");
+            len = f.len;
+            CHECK(CNET_write_application(&f.msg, &len));
+            frameexpected = 1-frameexpected;
+        }
+        else
+            printf("ignored\n");
+
+        transmit_frame((MSG *)NULL, DL_ACK, 0, f.seq);
+        break;
+      }
+    }
 }
 
 static EVENT_HANDLER(button_pressed)
