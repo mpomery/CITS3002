@@ -2,7 +2,7 @@
 
 DIRT = *.o *.i *~ */*~ *.log *.exe
 
-all : checksumtest
+all : intreader
 
 checksumtest:
 	gcc -std=c99 checksum_test.c -o checksum_test
@@ -10,6 +10,11 @@ checksumtest:
 
 creditcard:
 	gcc creditcard.c -o creditcard
+
+intreader:
+	clear
+	gcc -std=c99 intreader.c -o intreader
+	intreader
 
 clean:
 	$(RM) $(DIRT)
