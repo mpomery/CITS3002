@@ -1,0 +1,74 @@
+Layered Protocols
+
+1.	Physical
+	Data Link Layer
+	Network
+	Transport
+	Session
+	Presentation
+	Application
+
+2.	Advantages
+		Simplistic - Layers need not know what happens above and below them
+		
+	Disadvanages
+		Not all applications will fall sctrictly into the application layer, some
+		may need more information about the lower and upper layers
+		
+
+3.	Session and Network
+	Session encrypts all data coming in and out of the application
+	Network encrypts the maximum length of data before the headers need to be see at every hop
+
+4.	header fraction = n*h/(n*h+M)
+
+Data-Link Layer Protocols
+
+5.	
+
+6.	Stream of data is broken into frames, so that everyone can have a turn on the network to send data
+	i.e. So one large file transfer doesn't lock up the network for a large amount of time
+
+7.	
+
+8.	
+
+9.	
+
+10.	NACKS would only be sent when data was recieved that shouldn't have been, i.e. it is corrupt or incomplete
+	Timeout would need to be scheduled to resend data if a NACK has been recieved, or continue sending new data if no NACK appears.
+	ACK based protocols are better...
+
+11.	
+
+Network Layer Protocols
+
+12.	
+
+13.	For each node to use the same number, no two virtual circuits could use the same node if they had the same number
+	To create a Virtual circuit you would have to know that it could go the entire path as that number
+	Instead circuits can change number at each node, to stop one node having two circuits with the same number
+
+14.	
+
+15.	
+
+16.	UDP packets are the best packets for removal. They generally contain data that
+	does not need to get to the destination, such as voice and media streams
+
+Local Area Networks
+
+17.	Maximum Frame Length stops one device from taking up all the air time
+	Minimum frame Length makes sure that if there is a collision, it will be heard
+
+18.	Ethernet switch will accept data from a line in, then send it out to all the other ports
+	Ethernet Hub will connect all the lines together, and the connected devices will have to do collision avoidance themselves
+
+19.	
+
+20.	Wireless networks must employ collision avoidance, as collisions s
+
+
+
+
+
